@@ -1,0 +1,56 @@
+Restaurant,Location,Cuisine,Budget,Rating
+Spice Garden,Pune,Indian,Medium,4.5
+Pizza Hub,Pune,Italian,Low,4.0
+Burger House,Pune,Fast Food,Low,3.9
+Cafe Aroma,Pune,Continental,Medium,4.1
+
+Dragon Bowl,Mumbai,Chinese,Medium,4.2
+Royal Dine,Mumbai,Indian,High,4.8
+Sea Breeze,Mumbai,Seafood,High,4.6
+Street Bites,Mumbai,Fast Food,Low,4.1
+
+Tandoori Treat,Delhi,Indian,Medium,4.3
+Pasta Palace,Delhi,Italian,High,4.7
+Delhi Darbar,Delhi,Mughlai,High,4.6
+Chaat Junction,Delhi,Street Food,Low,4.2
+
+Sushi Point,Bangalore,Japanese,High,4.6
+Wok Express,Bangalore,Chinese,Low,4.0
+Cafe Brew,Bangalore,Continental,Medium,4.3
+BBQ Nation,Bangalore,BBQ,High,4.5
+
+Hyderabadi Biryani House,Hyderabad,Indian,Medium,4.7
+Spice Route,Hyderabad,Indian,High,4.5
+Quick Bites,Hyderabad,Fast Food,Low,4.1
+
+Chennai Dosa Corner,Chennai,South Indian,Low,4.4
+Marina Bay Kitchen,Chennai,Seafood,High,4.6
+Cafe Madras,Chennai,South Indian,Medium,4.5
+
+Kolkata Flavours,Kolkata,Bengali,Medium,4.4
+Roll Express,Kolkata,Street Food,Low,4.2
+Royal Bengal,Kolkata,Indian,High,4.6
+
+Ahmedabad Thali House,Ahmedabad,Gujarati,Medium,4.5
+Snack Street,Ahmedabad,Fast Food,Low,4.1
+Urban Spice,Ahmedabad,Indian,High,4.4
+
+Jaipur Royal Kitchen,Jaipur,Rajasthani,High,4.7
+Pink City Cafe,Jaipur,Continental,Medium,4.2
+Street Tadka,Jaipur,Street Food,Low,4.0
+
+Goa Beach Shack,Goa,Seafood,High,4.8
+Cafe Sunset,Goa,Continental,Medium,4.5
+Goa Bites,Goa,Fast Food,Low,4.2
+
+Chandigarh Spice Hub,Chandigarh,North Indian,Medium,4.3
+Urban Dhaba,Chandigarh,Indian,High,4.5
+Snack Town,Chandigarh,Fast Food,Low,4.1
+
+Indore Street Feast,Indore,Street Food,Low,4.5
+Royal Indore,Indore,Indian,Medium,4.3
+Food Plaza,Indore,Fast Food,Low,4.0
+
+Nagpur Curry House,Nagpur,Indian,Medium,4.2
+Orange City Cafe,Nagpur,Continental,Medium,4.1
+Nagpur Snacks,Nagpur,Fast Food,Low,3.9

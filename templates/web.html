@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Find Restaurants</title>
+
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Jost Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            background: linear-gradient(135deg, #fdf8f3, #fffaf5);
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            background:
+                linear-gradient(135deg, rgba(0,0,0,0.65), rgba(255,102,0,0.4)),
+                url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #ffffff, #ffd6b3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            color: #f1f1f1;
+        }
+
+        /* FORM */
+        .form-wrapper {
+            margin-top: -80px;
+        }
+
+        .form-box {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .form-control,
+        .form-select {
+            height: 52px;
+            border-radius: 6px;
+        }
+
+        /* BUTTON */
+        .btn-recommend {
+            height: 52px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #ff6a00, #ff914d);
+            color: white;
+            border: none;
+            width: 100%;
+        }
+
+        .btn-recommend:hover {
+            background: linear-gradient(135deg, #e85f00, #ff7f32);
+        }
+
+        /* CARDS */
+        .restaurant-card {
+            border: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .restaurant-img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .rating-box {
+            background: #198754;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Find Your Perfect Restaurant</h1>
+        <p>Discover top places based on your taste & mood</p>
+    </div>
+</div>
+
+<div class="container pb-5">
+
+    <!-- FORM -->
+    <div class="row justify-content-center form-wrapper">
+        <div class="col-lg-10">
+            <div class="form-box">
+
+                <form action="/recommend" method="POST">
+                    <div class="row g-3">
+
+                        <div class="col-md-6 col-lg-3">
+                            <input type="text" name="location" class="form-control" placeholder="Location" required>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <input type="text" name="cuisine" class="form-control" placeholder="Cuisine">
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <select name="budget" class="form-select">
+                                <option value="">Budget</option>
+                                <option>Low</option>
+                                <option>Medium</option>
+                                <option>High</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <input type="number" step="0.1" name="rating" class="form-control" placeholder="Rating">
+                        </div>
+
+                        <!-- 🔥 BUTTON IN NEXT ROW -->
+                        <div class="col-12">
+                            <button class="btn btn-recommend">Recommend Restaurants</button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="text-center mt-5">
+        <h2 class="section-title">Recommended Restaurants</h2>
+    </div>
+
+    {% if recommendations %}
+    <div class="row g-4 mt-3">
+        {% for restaurant in recommendations %}
+        <div class="col-md-6 col-lg-4">
+            <div class="card restaurant-card">
+
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" class="restaurant-img">
+
+                <div class="card-body">
+                    <h5>{{ restaurant.Restaurant }}</h5>
+                    <p>{{ restaurant.Location }} • {{ restaurant.Cuisine }}</p>
+                    <p>Budget: {{ restaurant.Budget }}</p>
+                    <span class="rating-box">⭐ {{ restaurant.Rating }}</span>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+        <p class="text-center mt-4 text-muted">No restaurants found</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
